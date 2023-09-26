@@ -6,8 +6,8 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Weather Application ](#-Metrics Application-)
-    - [How to build the "Metrics Application" website](#how-to-build-the-Metrics Application-website)
+- [📖 vet-clinic ](#-vet-clinic-)
+    - [How to build the vet-clinic" website](#how-to-build-the-vet-clinic-database)
   - [🛠 Walk through ](#-walk-through-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
