@@ -36,3 +36,128 @@ SELECT *
 	FROM "VET1".animals
 	WHERE
  	weight_kg >=10.4 AND weight_kg <=17.3;
+
+
+//PART2
+
+START TRANSACTION
+
+UPDATE "VET1".animals
+	SET species = 'unspecified';
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+UPDATE "VET1".animals
+	SET species = 'unspecified';
+
+SELECT * FROM "VET1".animals
+
+ROLLBACK;
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+UPDATE "VET1".animals
+	SET species = 'digimon'
+	WHERE name LIKE '%mon';
+	
+UPDATE "VET1".animals
+	SET species = 'pokemon'
+	WHERE species IS NULL;
+	
+SELECT * FROM "VET1".animals
+
+COMMIT;
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+UPDATE "VET1".animals
+	SET species = 'unspecified';
+
+SELECT * FROM "VET1".animals
+
+ROLLBACK;
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+UPDATE "VET1".animals
+	SET species = 'digimon'
+	WHERE name LIKE '%mon';
+	
+UPDATE "VET1".animals
+	SET species = 'pokemon'
+	WHERE species IS NULL;
+	
+SELECT * FROM "VET1".animals
+
+COMMIT;
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+DELETE FROM "VET1".animals;
+
+SELECT * FROM "VET1".animals
+
+ROLLBACK;
+
+SELECT * FROM "VET1".animals
+
+START TRANSACTION
+
+DELETE FROM "VET1".animals
+	WHERE date_of_birth > '2022-01-01';
+
+SELECT * FROM "VET1".animals
+
+SAVEPOINT my_savepoint;
+
+UPDATE "VET1".animals
+SET weight_kg = weight_kg * -1;
+
+SELECT * FROM "VET1".animals
+
+ROLLBACK TO my_savepoint;
+
+UPDATE "VET1".animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+
+COMMIT;
+
+SELECT * FROM "VET1".animals
+
+SELECT COUNT(*) AS total_animals
+	FROM "VET1".animals;
+
+SELECT COUNT(*) AS not_escaped
+	FROM "VET1".animals
+	WHERE escape_attempts = 0;
+
+SELECT
+	AVG(weight_kg) AS avg_weight
+	FROM
+	"VET1".animals;
+	
+SELECT neutered, SUM(escape_attempts) AS total_escapes
+	FROM"VET1".animals
+	GROUP BY neutered
+	ORDER BY total_escapes DESC
+	LIMIT 1;
+	
+SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
+	FROM "VET1".animals
+	GROUP BY species;
+
+SELECT species, AVG(escape_attempts) AS avg_escape_attempts
+	FROM "VET1".animals
+	WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+	GROUP BY species;
