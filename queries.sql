@@ -51,8 +51,6 @@ SELECT * FROM "VET1".animals
 UPDATE "VET1".animals
 	SET species = 'unspecified';
 
-SELECT * FROM "VET1".animals
-
 ROLLBACK;
 
 -- Update animals with names ending in 'mon'
