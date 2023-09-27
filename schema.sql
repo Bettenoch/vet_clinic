@@ -18,3 +18,7 @@ CREATE TABLE IF NOT EXISTS "VET1".animals
 
 ALTER TABLE IF EXISTS "VET1".animals
     OWNER to postgres;
+
+ALTER TABLE IF EXISTS "VET1".animals
+    ADD
+    COLUMN species VARCHAR(255) NULL;
