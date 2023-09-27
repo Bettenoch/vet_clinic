@@ -39,7 +39,7 @@ SELECT *
 
 
 //PART2
-
+ -- Begin Transaction
 START TRANSACTION
 
 UPDATE "VET1".animals
@@ -47,8 +47,7 @@ UPDATE "VET1".animals
 
 SELECT * FROM "VET1".animals
 
-START TRANSACTION
-
+-- Verify the Change
 UPDATE "VET1".animals
 	SET species = 'unspecified';
 
@@ -56,9 +55,7 @@ SELECT * FROM "VET1".animals
 
 ROLLBACK;
 
-SELECT * FROM "VET1".animals
-
-START TRANSACTION
+-- Update animals with names ending in 'mon'
 
 UPDATE "VET1".animals
 	SET species = 'digimon'
@@ -70,6 +67,7 @@ UPDATE "VET1".animals
 	
 SELECT * FROM "VET1".animals
 
+-- Commit the transaction
 COMMIT;
 
 SELECT * FROM "VET1".animals
@@ -101,23 +99,21 @@ COMMIT;
 
 SELECT * FROM "VET1".animals
 
-START TRANSACTION
-
+-- Delete all records in the animals table
 DELETE FROM "VET1".animals;
 
-SELECT * FROM "VET1".animals
-
 ROLLBACK;
 
 SELECT * FROM "VET1".animals
 
+-- Begin transaction
 START TRANSACTION
 
 DELETE FROM "VET1".animals
 	WHERE date_of_birth > '2022-01-01';
 
 SELECT * FROM "VET1".animals
-
+- Create savepoint
 SAVEPOINT my_savepoint;
 
 UPDATE "VET1".animals
@@ -127,6 +123,7 @@ SELECT * FROM "VET1".animals
 
 ROLLBACK TO my_savepoint;
 
+-- Update negative weights to positive
 UPDATE "VET1".animals
 SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
