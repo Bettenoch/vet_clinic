@@ -65,13 +65,12 @@ UPDATE "VET1".animals
 	SET species = 'pokemon'
 	WHERE species IS NULL;
 	
-SELECT * FROM "VET1".animals
-
 -- Commit the transaction
 COMMIT;
 
 SELECT * FROM "VET1".animals
 
+-- Begin transaction
 START TRANSACTION
 
 UPDATE "VET1".animals
@@ -83,6 +82,7 @@ ROLLBACK;
 
 SELECT * FROM "VET1".animals
 
+-- Begin transaction
 START TRANSACTION
 
 UPDATE "VET1".animals
