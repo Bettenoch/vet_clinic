@@ -60,3 +60,37 @@ ALTER TABLE public.animals
 ALTER TABLE public.animals	
 	ADD CONSTRAINT fk_owner_id FOREIGN KEY (owner_id) REFERENCES owners (id);
 
+--PART 4
+CREATE TABLE public.vets
+(
+    id serial NOT NULL,
+   	name character varying,
+	age integer,
+	date_of_graduation date,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE public.specializations
+(
+    vets_id integer,
+   	species_id integer
+);
+
+ALTER TABLE public.specializations
+	ADD CONSTRAINT fk_vets_id FOREIGN KEY (vets_id) REFERENCES vets(id);
+	
+ALTER TABLE public.specializations
+	ADD CONSTRAINT fk_species_id FOREIGN KEY (species_id) REFERENCES species(id);
+	
+CREATE TABLE public.visits
+(
+    vet_id integer,
+   	animal_id integer,
+	date_of_visit date
+);
+
+ALTER TABLE public.visits
+	ADD CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets(id);
+
+ALTER TABLE public.visits
+	ADD CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animals(id);
