@@ -36,3 +36,44 @@ INSERT INTO "VET1".animals(
 INSERT INTO "VET1".animals(
 	id, name, date_of_birth, escape_attempts, neutered, weight_kg, species)
 	VALUES (11,'Ditto','2022-05-14', 4, true, 22);
+
+INSERT INTO public.owners(full_name,age) 
+	VALUES('Sam Smith',34),
+		('Jennifer Orwell',19),
+		('Bob',45),
+		('Melody Pond',77),
+		('Dean Winchester',14),
+		('Jodie Whittaker',38);
+		
+INSERT INTO public.species(name) 
+	VALUES('Pokemon'),
+		('Digimon');
+
+UPDATE public.animals
+	SET species_id = 2
+	WHERE name LIKE '%mon';
+	
+UPDATE public.animals
+	SET species_id = 1
+	WHERE species_id IS NULL;
+	
+UPDATE public.animals
+	SET owner_id = 1
+	WHERE name = 'Agumon';
+	
+UPDATE public.animals
+	SET owner_id = 2
+	WHERE name IN ('Gabumon', 'Pikachu');
+
+UPDATE public.animals
+	SET owner_id = 3
+	WHERE name IN ('Devimon', 'Plantmon');
+
+UPDATE public.animals
+	SET owner_id = 4
+	WHERE name IN ('Charmander', 'Squirtel', 'Blossom');
+
+UPDATE public.animals
+	SET owner_id = 5
+	WHERE name IN ('Angemon', 'Boarmon');
+	
