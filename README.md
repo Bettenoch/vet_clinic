@@ -13,8 +13,6 @@
     - [Tech Stack ](#tech-stack-)
     - [Tools ](#tools-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
-  - [🚀 Live Recording ](#-live-recording-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -111,9 +109,6 @@ DBMS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-[Coming Soon]
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -193,7 +188,7 @@ This project is deployed at github pages you can clone it here. [Please click to
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Bettenoch/Metrics-Application/issues).
+Feel free to check the [issues page](https://github.com/Bettenoch/vet_clinic/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,6 +206,6 @@ I would like to thank the Microverse full-stack curriculum for the inspiration a
 
 ## 📝 License <a name="license"></a>
 
-This project is under [MIT](https://github.com/Bettenoch/Metrics-Application/blob/dev/LICENSE) licensed.
+This project is under [MIT](https://github.com/Bettenoch/vet_clinic/blob/dev/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
