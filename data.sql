@@ -71,7 +71,7 @@ UPDATE public.animals
 
 UPDATE public.animals
 	SET owner_id = 4
-	WHERE name IN ('Charmander', 'Squirtel', 'Blossom');
+	WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
 
 UPDATE public.animals
 	SET owner_id = 5
