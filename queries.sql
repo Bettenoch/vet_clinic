@@ -178,15 +178,65 @@ ON A.species_id = S.id
 GROUP BY S.name;
 
 SELECT A.name FROM public.animals A
-INNER JOIN public.species S ON A.species_id = S.id
-INNER JOIN public.owners O ON A.owner_id = O.id
-WHERE O.full_name = 'Jennifer Orwell' AND S.name = 'Digimon';
+	INNER JOIN public.species S ON A.species_id = S.id
+	INNER JOIN public.owners O ON A.owner_id = O.id
+	WHERE O.full_name = 'Jennifer Orwell' AND S.name = 'Digimon';
 
 SELECT name FROM public.animals A
-INNER JOIN public.owners O ON A.owner_id = O.id
-WHERE O.full_name = 'Dean Winchester' AND escape_attempts = 0;
+	INNER JOIN public.owners O ON A.owner_id = O.id
+	WHERE O.full_name = 'Dean Winchester' AND escape_attempts = 0;
 
 SELECT COUNT(*) as count, full_name FROM public.animals A
-INNER JOIN public.owners O ON A.owner_id = O.id
-GROUP BY O.full_name
-ORDER BY count DESC;
+	INNER JOIN public.owners O ON A.owner_id = O.id
+	GROUP BY O.full_name
+	ORDER BY count DESC;
+
+--PART3
+
+SELECT A.name FROM public.visits V
+	INNER JOIN public.animals A ON V.animal_id = A.id
+	INNER JOIN public.vets B ON V.vet_id = B.id
+	WHERE B.name = 'Vet William Tatcher ';
+	ORDER BY V.date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(*) AS animals FROM public.visits V
+	INNER JOIN public.animals A ON V.animal_id = A.id
+	INNER JOIN public.vets B ON V.vet_id = B.id
+	WHERE B.name = 'Vet Stephanie Mendez ';
+
+SELECT B.name AS vet, S.name AS species FROM specializations C
+	FULL OUTER JOIN public.vets B ON C.vets_id = B.id
+	FULL OUTER JOIN public.species S ON C.species_id = S.id;
+
+SELECT A.name FROM public.visits V
+	INNER JOIN public.animals A ON V.animal_id = A.id
+	INNER JOIN public.vets B ON V.vet_id = B.id
+	WHERE B.name = 'Vet Stephanie Mendez ' AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT A.name FROM public.visits V
+	INNER JOIN public.animals A ON V.animal_id = A.id
+	GROUP BY A.name
+	ORDER BY COUNT(date_of_visit) DESC LIMIT 1;
+
+SELECT A.name FROM public.visits V
+	INNER JOIN public.animals A ON V.animal_id = A.id
+	INNER JOIN public.vets B ON V.vet_id = B.id
+	WHERE B.name = 'Vet Maisy Smith  '
+	ORDER BY V.date_of_visit LIMIT 1;
+
+SELECT A.name AS animal, B.name AS vet, V.date_of_visit FROM public.visits V
+	INNER JOIN public.animals A ON A.id = V.animal_id
+	INNER JOIN public.vets B ON B.id = V.vet_id
+	ORDER BY date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(*) AS visits FROM public.visits V
+  WHERE V.vet_id = (SELECT id FROM public.vets B
+  INNER JOIN public.specializations C ON B.id != C.vets_id LIMIT 1)
+  
+SELECT S.name, COUNT(S.name) AS visits FROM public.animals A
+	INNER JOIN public.visits V ON A.id = V.animal_id
+	INNER JOIN public.vets B ON V.vet_id = B.id
+	INNER JOIN public.species S ON A.species_id = S.id
+	WHERE B.name = 'Vet Maisy Smith  '
+	GROUP BY S.name
+	ORDER BY visits DESC LIMIT 1;

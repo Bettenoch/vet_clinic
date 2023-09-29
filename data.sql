@@ -76,4 +76,35 @@ UPDATE public.animals
 UPDATE public.animals
 	SET owner_id = 5
 	WHERE name IN ('Angemon', 'Boarmon');
+
+--PART 4
+INSERT INTO public.vets(name,age,date_of_graduation) 
+	VALUES('Vet William Tatcher ', 45, '2000-04-23'),
+	('Vet Maisy Smith  ', 26, '2019-01-17'),
+	('Vet Stephanie Mendez ', 64, '1981-04-05'),
+	('Vet Jack Harkness ', 38, '2005-08-05');
 	
+INSERT INTO public.specializations(vets_id,species_id) 
+	VALUES(1,1),(3,2),(3,1),(4,2);
+
+INSERT INTO public.visits(animal_id,vet_id,date_of_visit)
+	VALUES(1,1,'2020-05-24'),
+	(1,3,'2020-07-22'),
+	(2,4,'2021-02-02'),
+	(5,2,'2020-05-01'),
+	(5,2,'2020-08-03'),
+	(5,2,'2020-05-14'),
+	(3,3,'2021-04-05'),
+	(9,4,'2021-02-03'),
+	(7,2,'2019-12-22'),
+	(7,1,'2020-08-10'),
+	(7,2,'2021-04-07'),
+	(10,3,'2019-09-29'),
+	(8,4,'2020-03-10'),
+	(8,4,'2020-04-11'),
+	(4,2,'2019-01-24'),
+	(4,2,'2019-05-15'),
+	(4,2,'2020-02-27'),
+	(4,2,'2020-03-08'),
+	(6,3,'2020-05-24'),
+	(6,1,'2021-01-11');
