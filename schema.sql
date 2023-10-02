@@ -94,3 +94,8 @@ ALTER TABLE public.visits
 
 ALTER TABLE public.visits
 	ADD CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animals(id);
+
+--PART5
+ALTER TABLE public.owners ADD COLUMN email VARCHAR(120);
+
+--CREATE INDEX TO IMPROVE EXECUTION TIME
