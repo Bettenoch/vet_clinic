@@ -206,6 +206,6 @@ I would like to thank the Microverse full-stack curriculum for the inspiration a
 
 ## 📝 License <a name="license"></a>
 
-This project is under [MIT](https://github.com/Bettenoch/vet_clinic/blob/dev/LICENSE) licensed.
+This project is under [MIT](https://github.com/Bettenoch/vet_clinic/blob/database-perfomance-audit/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
