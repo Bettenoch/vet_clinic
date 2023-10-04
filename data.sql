@@ -108,3 +108,13 @@ INSERT INTO public.visits(animal_id,vet_id,date_of_visit)
 	(4,2,'2020-03-08'),
 	(6,3,'2020-05-24'),
 	(6,1,'2021-01-11');
+
+--PART4
+
+INSERT INTO  public.visits (animal_id, vet_id, date_of_visit) 
+	SELECT * FROM 
+	(SELECT id FROM  public.animals) animal_ids, 
+	(SELECT id FROM  public.vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into public.owners (full_name, email) 
+select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';

@@ -41,6 +41,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 - 1. Download postgreSQL
 - 2. CREATE NEW DB AND TABLES
+- 3. MAKE QUERIES
 
 ## 🛠 Walk through <a name="walk-through"></a>
 
@@ -58,7 +59,6 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 
 
-
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
@@ -68,7 +68,6 @@ This repository includes files with plain SQL that can be used to recreate a dat
     
   </ul>
 </details>
-
 
 
 <!-- Features -->
@@ -109,9 +108,6 @@ DBMS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
@@ -166,13 +162,19 @@ This project is deployed at github pages you can clone it here. [Please click to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Author
+## AuthorS
 
 👤 **Bett Enoch**
 
 - GitHub: [@bettenoch](https://github.com/Bettenoch)
 - Twitter: [@BybEnoch](https://twitter.com/BybEnoch)
 - LinkedIn: [@GeoIntelligence](https://www.linkedin.com/in/bett-kipngeno-enock-8b5153214/)
+
+👤 **Redwan Mohammed-Nur**
+
+- GitHub: [@ethred](https://github.com/ethred)
+- Twitter: [@redwanthr](https://twitter.com/@redwanthr)
+- LinkedIn: [Redwan Tahir](https://www.linkedin.com/in/redwan-tahir-78260733/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -206,6 +208,6 @@ I would like to thank the Microverse full-stack curriculum for the inspiration a
 
 ## 📝 License <a name="license"></a>
 
-This project is under [MIT](https://github.com/Bettenoch/vet_clinic/blob/dev/LICENSE) licensed.
+This project is under [MIT](https://github.com/Bettenoch/vet_clinic/blob/database-perfomance-audit/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

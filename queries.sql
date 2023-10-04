@@ -240,3 +240,13 @@ SELECT S.name, COUNT(S.name) AS visits FROM public.animals A
 	WHERE B.name = 'Vet Maisy Smith  '
 	GROUP BY S.name
 	ORDER BY visits DESC LIMIT 1;
+
+--PART4
+EXPLAIN ANALYZE SELECT * FROM public.visits 
+WHERE vet_id = 2;
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM public.visits where animal_id = 4;
+
+EXPLAIN ANALYZE SELECT * FROM public.visits where vet_id = 2;
+
+EXPLAIN ANALYZE SELECT * FROM public.owners where email = 'owner_18327@mail.com';
